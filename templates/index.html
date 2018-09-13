@@ -3,6 +3,7 @@
 {% block content %}
 	{% for entry in entries%}
 	<h3><a href="/post/{{entry.title}}">{{entry.title}}</a></h3>
+	
 	<p>{{entry.content}}</p>
 	
 	<p>{{'='*100}}</p>

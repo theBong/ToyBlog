@@ -3,5 +3,6 @@
 {% block content %}
 	<h3>{{entry.title}} || {{entry.timestamp}}</h3>
 	<p>{{'-'*100}}</p>
-	<p>{{entry.content}}</p>	
+	<p>{{entry.content}}</p>
+	<a href="/delete/{{entry.title}}">Delete Entry</a>
 {% endblock %}

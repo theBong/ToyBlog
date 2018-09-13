@@ -27,9 +27,10 @@ def view(title):
 		print (entry.content)
 		return render_template("post.html",entry=entry)
 
-@app.route('/delete', methods = ['POST'])
-def delete():
-	pass
+@app.route('/delete/<title>')
+def delete(title):
+	helper.del_entry(title)
+	return render_template("save.html", content=str(title + " kar diya delete"))
 
 @app.route('/save', methods = ['POST'])
 def save():
@@ -37,10 +38,9 @@ def save():
 	post = request.form.get('post')
 	if (title and post) and helper.check_unique(title):
 		helper.add_entry(title,post)
-		return "Saved : " + title + " : " + post
+		return render_template("save.html", content=str("Saved : " + title + " : " + post))
 	else:
-		return "Title already taken"
-	
+		return render_template("save.html", content="Title already taken")	
 
 if __name__ == '__main__':
 	models.initialize()
