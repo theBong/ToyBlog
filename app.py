@@ -18,6 +18,15 @@ def index():
 def add():
 	return render_template("add.html")
 
+@app.route('/post/<title>')
+def view(title):
+	if helper.check_unique(title):
+		return "No such post exists"
+	else:
+		entry=helper.view_entry(title)
+		print (entry.content)
+		return render_template("post.html",entry=entry)
+
 @app.route('/save', methods = ['POST'])
 def save():
 
