@@ -27,9 +27,12 @@ def view(title):
 		print (entry.content)
 		return render_template("post.html",entry=entry)
 
+@app.route('/delete', methods = ['POST'])
+def delete():
+	pass
+
 @app.route('/save', methods = ['POST'])
 def save():
-
 	title = request.form.get('title')
 	post = request.form.get('post')
 	if (title and post) and helper.check_unique(title):

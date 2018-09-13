@@ -16,3 +16,11 @@ def view_entry(title):
 		return models.Entry.select().where(models.Entry.title==title).get()
 	else:
 		return "No such entry exists"
+
+def del_entry(title):
+	a = models.Entry.select().where(models.Entry.title==title)
+	if a:
+		b = models.Entry.delete().where(models.Entry.title==title)
+		return b.execute()
+	else:
+		return "No such entry exists"
