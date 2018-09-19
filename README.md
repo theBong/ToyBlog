@@ -7,7 +7,6 @@
 
 ## Goals
 
-- CRUD for entries in database
-- Blog entry modelling
-- Flask Renders one page at a time
-- Flask Search form
+- CRUD for entries in database (Completed - U remaining)
+- Blog entry modelling (Completed)
+- Learn Bootstrap for frontend (Completed)
