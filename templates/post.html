@@ -1,8 +1,10 @@
 {% extends "layout.html" %}
 
 {% block content %}
-	<h3>{{entry.title}} || {{entry.timestamp}}</h3>
-	<p>{{'-'*100}}</p>
-	<p>{{entry.content}}</p>
-	<a href="/delete/{{entry.title}}">Delete Entry</a>
+	<div class="container pt-5">
+		<h3>{{entry.title}} | {{entry.timestamp}}</h3> 
+
+		<p>{{entry.content}}</p>
+		<a href="/delete/{{entry.title}}">Delete Entry</a>
+	</div>
 {% endblock %}
